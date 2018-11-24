@@ -10,23 +10,17 @@ class Segment:
         self.prev = None
 
         # Segment data
-        self.rect = None
+        self.rect = pygame.Rect(x_pos, y_pos, size, size)
         self.col = colour
-        self.size = size
-        self.x_pos = x_pos
-        self.y_pos = y_pos
 
-    def draw_segment(self, window, x_pos, y_pos):
-        self.x_pos = x_pos
-        self.y_pos = y_pos
-
-        self.rect = pygame.draw.rect(window, self.col, (self.x_pos, self.y_pos, self.size, self.size))
+    def draw_segment(self, window):
+        self.rect = pygame.draw.rect(window, self.col, self.rect)
 
 
 class Snake:
 
     segments = LinkedLists.DoublyLinkedList()
-    maxSize = 10
+    max_size = 10
 
     # the key to the directions dictionary
     snake_dir = "left"
@@ -68,16 +62,14 @@ class Snake:
 
     def draw_snake(self, window):
 
-        if self.segments.size > self.maxSize:
+        if self.segments.size > self.max_size:
             self.segments.delete_last()
 
         self.segments.add_first(Segment(self.colour, self.size, self.x_pos, self.y_pos))
 
         # Go through the linked list of segments and draw each one
         for c in range(0, self.segments.size):
-            self.segments.get_at_pos(c).draw_segment(window,
-                                                     self.segments.get_at_pos(c).x_pos,
-                                                     self.segments.get_at_pos(c).y_pos)
+            self.segments.get_at_pos(c).draw_segment(window)
 
     # The return is true if the snake head has colided with the apple's rectangle
     def eat(self, apple):
@@ -85,7 +77,7 @@ class Snake:
         if self.segments.head.rect.colliderect(apple):
 
             self.segments.add_first(Segment(self.colour, self.size, self.x_pos, self.y_pos))
-            self.maxSize += 5
+            self.max_size += 5
 
             return True
         else:
