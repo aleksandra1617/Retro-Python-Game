@@ -92,7 +92,6 @@ def main():
 
         # Displays the score
         GUI.display_text(window, "Score: " + str(score), 50, (0, 0, 0), [10, 10])
-        #GUI.display_text(window, str(score), 50, (0, 0, 0), [135, 10])
 
         # Displays the buffered data
         pygame.display.update()
