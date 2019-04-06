@@ -2,6 +2,7 @@ import random
 import pygame
 
 from Snake import Snake
+import GUI
 
 pygame.init()
 
@@ -47,13 +48,9 @@ def randomize_apple_pos(app_width, app_height):
     return rand_x, rand_y
 
 
-def display_text(content, txt_size, colour, position):
-    font = pygame.font.SysFont(None, txt_size)
-    text = font.render(content, True, colour)
-    window.blit(text, position)
-
-
 def main():
+    view_width = 1000
+    view_height = 600
     score = 0
 
     # Construct a snake
@@ -64,14 +61,20 @@ def main():
     app_height = 10
 
     rand_x, rand_y = randomize_apple_pos(app_width, app_height)
-
     # Game loop
     while run:
         # Draw background, needs to happen every frame
         window.fill(white)
 
+        # Calculate game view rectangle starting position
+        start_x = (width - view_width)/2
+        start_y = (height - view_height)/2
+
         # Player
         get_key_entered(snake)
+
+        game_view = pygame.draw.rect(window, (98, 244, 66), (start_x, start_y, view_width, view_height))
+        game_border = pygame.draw.rect(window, (3, 132, 36), (start_x, start_y, view_width, view_height), 4)
 
         snake.draw_snake(window)
         snake.update_position()
@@ -88,8 +91,8 @@ def main():
             score += 5
 
         # Displays the score
-        display_text("Score: ", 50, (0, 0, 0), [10, 10])
-        display_text(str(score), 50, (0, 0, 0), [135, 10])
+        GUI.display_text(window, "Score: " + str(score), 50, (0, 0, 0), [10, 10])
+        #GUI.display_text(window, str(score), 50, (0, 0, 0), [135, 10])
 
         # Displays the buffered data
         pygame.display.update()

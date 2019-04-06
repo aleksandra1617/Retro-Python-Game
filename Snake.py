@@ -18,7 +18,6 @@ class Segment:
 
 
 class Snake:
-
     segments = LinkedLists.DoublyLinkedList()
     max_size = 10
 
@@ -27,7 +26,6 @@ class Snake:
     directions = {"left": [-1, 0], "right": [1, 0], "up": [0, -1], "down": [0, 1]}
 
     def __init__(self, x_pos, y_pos, x_speed, y_speed, size, colour):
-
         self.x_pos = x_pos
         self.y_pos = y_pos
 
@@ -61,21 +59,18 @@ class Snake:
         self.y_pos += y_vel
 
     def draw_snake(self, window):
-
         if self.segments.size > self.max_size:
             self.segments.delete_last()
 
         self.segments.add_first(Segment(self.colour, self.size, self.x_pos, self.y_pos))
 
         # Go through the linked list of segments and draw each one
-        for c in range(0, self.segments.size):
+        for c in range(self.segments.size):
             self.segments.get_at_pos(c).draw_segment(window)
 
-    # The return is true if the snake head has colided with the apple's rectangle
+    # The return is true if the snake head has collided with the apple's rectangle
     def eat(self, apple):
-
         if self.segments.head.rect.colliderect(apple):
-
             self.segments.add_first(Segment(self.colour, self.size, self.x_pos, self.y_pos))
             self.max_size += 5
 
