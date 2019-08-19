@@ -16,7 +16,6 @@ An arcade snake game made with Python.
   
   - Compleated
      - Score
-     - Spawning an apple
-     - Eating apple
+     - Spawning apple and snake growth
      - Snake motion
     
