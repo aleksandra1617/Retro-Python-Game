@@ -5,7 +5,7 @@ An arcade snake game made with Python.
 <hr>
   
   - Todo
-      - Obstacles and Border Collision
+      - Obstacles
       - Second Player and Lives
       - Other Level
       - Main Menu
@@ -15,6 +15,7 @@ An arcade snake game made with Python.
       - Save Progress
   
   - Compleated
+     - Border Collision
      - Score
      - Spawning apple and snake growth
      - Snake motion
