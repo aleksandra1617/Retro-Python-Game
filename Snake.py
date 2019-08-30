@@ -19,13 +19,13 @@ class Segment:
 
 class Snake:
     segments = LinkedLists.DoublyLinkedList()
-    max_size = 10
 
     snake_dir = "left"
     directions = {"left": [-1, 0], "right": [1, 0], "up": [0, -1], "down": [0, 1]}
 
     def __init__(self, x_pos, y_pos, x_speed, y_speed, segment_size, colour, lives=3):
         self.lives = lives
+        self.size = 3   # TODO: Assert that snake size is never 0!
 
         self.x_pos = x_pos
         self.y_pos = y_pos
@@ -60,20 +60,20 @@ class Snake:
         self.y_pos += y_vel
 
     def draw_snake(self, window):
-        if self.segments.size > self.max_size:
+        if self.segments.length > self.size:
             self.segments.delete_last()
 
         self.segments.add_first(Segment(self.colour, self.segment_size, self.x_pos, self.y_pos))
 
         # Go through the linked list of segments and draw each one
-        for c in range(self.segments.size):
+        for c in range(self.segments.length):
             self.segments.get_at_pos(c).draw_segment(window)
 
     # The return is true if the snake head has collided with the apple's rectangle
     def eat(self, apple):
         if self.segments.head.rect.colliderect(apple):
             self.segments.add_first(Segment(self.colour, self.segment_size, self.x_pos, self.y_pos))
-            self.max_size += 5
+            self.size += 5
 
             return True
         else:

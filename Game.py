@@ -65,11 +65,14 @@ def main():
 
     spawn_area_scale = (start_x, start_y, view_width, view_height)
 
+    # COLOURS
+    lives_display_col = (0, 0, 0)
+
     score = 0
     live_taken = False
 
     # Construct a snake
-    snake = Snake(400, 400, 3, 3, 15, (0, 0, 0))
+    snake = Snake(1023, 350, 3, 3, 15, (0, 0, 0))
 
     # Apple scale
     app_width = 10
@@ -96,8 +99,10 @@ def main():
         get_key_entered(snake)
 
         if snake.lives > 0:
-            snake.draw_snake(window)
-            snake.update_position()
+
+            if not live_taken:
+                snake.draw_snake(window)
+                snake.update_position()
 
             # If the apple was eaten
             if snake.eat(apple):
@@ -107,7 +112,7 @@ def main():
                 # Update score
                 score += 5
 
-            print ("Snake size: ", snake.segments.size)
+            print("Snake length: ", snake.segments.length)
 
             snake_x = snake.segments.head.rect.x
             snake_y = snake.segments.head.rect.y
@@ -125,11 +130,24 @@ def main():
                 snake.lives -= 1
                 live_taken = True
 
+                # RESPAWN
+                temp_lives = snake.lives
+                del snake
+                snake = Snake(1023, 350, 3, 3, 15, (0, 0, 0))
+                snake.lives = temp_lives
+
+                # Set all segments in the snake to start at the head position
+                for counter in range(0, snake.segments.length):
+                    snake.segments.get_at_pos(counter).rect.x = 1023
+                    snake.segments.get_at_pos(counter).rect.y = 350
+
             # Can loose a life again
             if round(curr_time - start_timer, 0) == invincibility_time:
                 live_taken = False
+                # Strange snake scale behaviour of snake when snake respawn runs here. (To inspect that just in case.)
 
         else:   # GAME OVER
+            # pygame.display.update()  # this update causes flicker of the rectangle and text below
 
             pygame.draw.rect(window, (155, 50, 50), (start_x-2, start_y-2, view_width+4, view_height+4))
             GUI.display_text(window, "GAME OVER! ", 100, (0, 0, 0), [310, 300])
