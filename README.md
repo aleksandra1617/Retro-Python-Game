@@ -14,7 +14,7 @@ An arcade snake game made with Python.
       - Leader Board
       - Save Progress
   
-  - Compleated
+  - Completed
      - Respawn Snake
      - Border Collision
      - Score
