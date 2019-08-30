@@ -15,6 +15,7 @@ An arcade snake game made with Python.
       - Save Progress
   
   - Compleated
+     - Respawn Snake
      - Border Collision
      - Score
      - Spawning apple and snake growth
