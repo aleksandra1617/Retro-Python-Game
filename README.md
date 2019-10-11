@@ -4,6 +4,13 @@ An arcade snake game made with Python.
 <details><summary><b>Milestones<b/></summary>
 <hr>
   
+ - Completed Milestones
+     - Respawn Snake
+     - Border Collision
+     - Score
+     - Spawning apple and snake growth
+     - Snake motion 
+  
   - Todo
       - Obstacles
       - Second Player and Lives
@@ -13,11 +20,4 @@ An arcade snake game made with Python.
       - Login
       - Leader Board
       - Save Progress
-  
-  - Completed
-     - Respawn Snake
-     - Border Collision
-     - Score
-     - Spawning apple and snake growth
-     - Snake motion
-    
+ 
