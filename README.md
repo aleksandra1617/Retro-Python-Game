@@ -14,7 +14,7 @@ This is a remake of the classic snake game that came built into phones back in t
   - Todo
       - Obstacles
       - Second Player and Lives
-      - Other Level
+      - Other Levels
       - Main Menu
       - AI Snake
       - Login
