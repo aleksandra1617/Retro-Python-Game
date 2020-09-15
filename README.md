@@ -12,7 +12,7 @@ The tools used to make this are Python and PyGame.
      - Spawning apple and snake growth 
      - Snake motion 
   
-  - Todo
+  - Left Todo
       - Obstacles
       - Second Player and Lives
       - Other Levels
