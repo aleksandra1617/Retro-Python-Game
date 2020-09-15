@@ -1,5 +1,5 @@
-# Snake-Game
-An arcade snake game made with Python. 
+# Python-Game
+This is a remake of the classic snake game that came built into phones back in the 90s.
 
 <details><summary><b>Milestones<b/></summary>
 <hr>
@@ -8,7 +8,7 @@ An arcade snake game made with Python.
      - Respawn Snake
      - Border Collision
      - Score
-     - Spawning apple and snake growth
+     - Spawning apple and snake growth 
      - Snake motion 
   
   - Todo
