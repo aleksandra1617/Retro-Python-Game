@@ -1,4 +1,4 @@
-# Python-Game
+# Python Game Remake
 This is a remake of the classic snake game that came built into phones back in the 90s.
 
 <details><summary><b>Milestones<b/></summary>
