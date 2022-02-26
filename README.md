@@ -14,13 +14,14 @@ The tools used to make this are Python and PyGame.
      - Lives
   
   - Left Todo
+      - Bite Tail
       - Obstacles
       - Pause
+      - Controller Support
       - Other Levels
       - Main Menu
-      - Different Pickups (Powerup & Debuffs)
+      - Different Pickups (Powerup {Invincibility} & Debuffs {Tail on Fire})
       - AI Snake
       - Leader Board
       - PvP
-  
- 
+      - Custom Game Skins
