@@ -9,8 +9,9 @@ The tools used to make this are Python and PyGame.
      - Respawn Snake
      - Border Collision
      - Score
-     - Spawning apple and snake growth 
-     - Snake motion 
+     - Spawning Apple
+     - Snake Growth 
+     - Snake Motion 
      - Lives
   
   - Left Todo
