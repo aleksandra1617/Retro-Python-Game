@@ -11,14 +11,16 @@ The tools used to make this are Python and PyGame.
      - Score
      - Spawning apple and snake growth 
      - Snake motion 
+     - Lives
   
   - Left Todo
       - Obstacles
-      - Second Player and Lives
+      - Pause
       - Other Levels
       - Main Menu
+      - Different Pickups (Powerup & Debuffs)
       - AI Snake
-      - Login
       - Leader Board
-      - Pause
+      - PvP
+  
  
