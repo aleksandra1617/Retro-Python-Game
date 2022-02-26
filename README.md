@@ -20,5 +20,5 @@ The tools used to make this are Python and PyGame.
       - AI Snake
       - Login
       - Leader Board
-      - Save Progress
+      - Pause
  
