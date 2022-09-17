@@ -1,4 +1,4 @@
-# Python Game Remake
+# Snake Game Remake in Python
 This is a remake of the classic snake game that came built into phones back in the 90s. 
 The tools used to make this are Python and PyGame.
 
